@@ -36,7 +36,7 @@ class CardController extends Controller
      */
     public function create()
     {
-        return view('cards.index', compact('cards'));
+        return view('cards.create');
     }
 
     /**
