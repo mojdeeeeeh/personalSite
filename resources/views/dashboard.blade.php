@@ -19,7 +19,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/US.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/US.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>USA</td>
@@ -33,7 +33,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/DE.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/DE.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>Germany</td>
@@ -47,7 +47,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/AU.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/AU.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>Australia</td>
@@ -61,7 +61,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/GB.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/GB.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>United Kingdom</td>
@@ -75,7 +75,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/RO.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/RO.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>Romania</td>
@@ -89,7 +89,7 @@
                                                         <tr>
                                                             <td>
                                                                 <div class="flag">
-                                                                    <img src="{{ asset('img/flags/BR.png') }}">
+                                                                    <img src="{{ asset('theme/img/flags/BR.png') }}">
                                                                 </div>
                                                             </td>
                                                             <td>Brasil</td>
@@ -270,7 +270,7 @@
                             <div class="card card-product">
                                 <div class="card-image" data-header-animation="true">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('img/card-2.jpeg') }}">
+                                        <img class="img" src="{{ asset('theme/img/card-2.jpeg') }}">
                                     </a>
                                 </div>
                                 <div class="card-content">
@@ -309,7 +309,7 @@
                             <div class="card card-product">
                                 <div class="card-image" data-header-animation="true">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('img/card-3.jpeg') }}">
+                                        <img class="img" src="{{ asset('theme/img/card-3.jpeg') }}">
                                     </a>
                                 </div>
                                 <div class="card-content">
@@ -348,7 +348,7 @@
                             <div class="card card-product">
                                 <div class="card-image" data-header-animation="true">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ asset('img/card-1.jpeg') }}">
+                                        <img class="img" src="{{ asset('theme/img/card-1.jpeg') }}">
                                     </a>
                                 </div>
                                 <div class="card-content">

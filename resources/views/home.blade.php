@@ -43,7 +43,7 @@
                   <h4 class="card-title">{{ Auth::user()->name }}</h4>
                   <div class="card-avatar">
                      <a href="#pablo">
-                     <img class="img" src="{{ asset('img/faces/card-profile1-square.jpg') }}" />
+                     <img class="img" src="{{ asset('theme/img/faces/card-profile1-square.jpg') }}" />
                      </a>
                   </div>
                </div>

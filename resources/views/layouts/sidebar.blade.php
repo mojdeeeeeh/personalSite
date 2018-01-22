@@ -112,6 +112,12 @@
                                 </li>
                                 <li class="{{ Request::path() ==  'cards' ? 'active' : ''  }}">
                                     <a href="{{ url('cards') }}">
+                                        <span class="sidebar-mini"><i class="material-icons">check_box</i></span>
+                                        <span class="sidebar-normal"> M/D Posts</span>
+                                    </a>
+                                </li>
+                                <li class="{{ Request::path() ==  'cards/create' ? 'active' : ''  }}">
+                                    <a href="{{ url('cards/create') }}">
                                         <span class="sidebar-mini"><i class="material-icons">move_to_inbox</i></span>
                                         <span class="sidebar-normal">Create post</span>
                                     </a>
