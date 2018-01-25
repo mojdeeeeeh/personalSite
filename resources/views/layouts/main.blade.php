@@ -46,15 +46,14 @@
       <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      {{-- ckeditor --}}
-      <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
+
    </head>
 
 
    <body>
 
       <div class="wrapper">
-         @extends('layouts.sidebar')
+         @include('layouts.sidebar')
          <div class="main-panel">
 
             <nav class="navbar navbar-transparent navbar-absolute">
@@ -83,7 +82,7 @@
                               <p class="hidden-lg hidden-md">Dashboard</p>
                            </a>
                         </li>
-                        @endauth
+                        
                         <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                               <i class="material-icons">notifications</i>
@@ -111,6 +110,7 @@
                               </li>
                            </ul>
                         </li>
+                        @endauth
                         <li>
                            <div class="collapse navbar-collapse" id="app-navbar-collapse">
                               <!-- Left Side Of Navbar -->
@@ -248,14 +248,18 @@
    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
    <script src="{{ asset('theme/js/demo.js') }}"></script>
    <script src="{{ mix('js/app.js') }}"></script>
+   {{-- <script src="[ckeditor-build-path]/ckeditor.js"></script> --}}
+
+    <script src="{{ asset('CKEditor/ckeditor/ckeditor.js')}}"></script>
+    {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
+
    <script type="text/javascript">
       $(document).ready(function() {
-      
           // Javascript method's body can be found {{ asset('theme/js/demos.js')}}
           demo.initDashboardPageCharts();
           demo.initVectorMap();
       });
    </script>
-   @yield('script')
+   @yield('scripts')
 </html>
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\card;
-use App\comment;
+use App\Card;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -15,9 +15,10 @@ class CommentController extends Controller
      */
     public function index()
     {
-         $cards = \App\card::orderBy('created_at', 'desc')->paginate(5);
+         $cards = \App\Card::orderBy('created_at', 'desc')
+                ->paginate(5);
 
-        return view('comments.index', compact(['comments','cards']));
+        return view('comments.index', compact(['cards']));
     }
 
     /**
@@ -27,8 +28,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('comments.create', compact('comments'));
-
+        return view('comments.create');
     }
 
     /**
@@ -37,27 +37,24 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, card $card)
+    public function store(Request $request, Card $card)
     {
-//        comment::create ([
-//            'cmBody'  => $request->cmBody,
-//            'cmName'   => $request->cmName,
-//            'cmEmail'   => $request->cmEmail,
-//            'card_id' => 1,
-//        ]);
+        $this->validate($request, [
+            'cmBody' => 'required|min:6',
+            'cmName' => 'required',
+            'cmEmail' => 'required'
+        ]);
 
-            $this->validate($request, [
-                'cmBody' => 'required|min:6',
-                'cmName' => 'required',
-                'cmEmail' => 'required'
-            ]);
+        $comment = new Comment([
+            'cmBody' => $request->cmBody,
+            'cmName' => $request->cmName,
+            'cmEmail' => $request->cmEmail
+        ]);
+        
+        $card->comments()
+            ->save($comment);
 
-        $comment = new comment($request->all());
-        $card->comments()->save($comment);
         return back();
-
-
-//        return redirect()->route('comments.create');
     }
 
     /**
@@ -66,7 +63,7 @@ class CommentController extends Controller
      * @param  \App\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(comment $comment)
+    public function show(Comment $comment)
     {
         //
     }
@@ -77,7 +74,7 @@ class CommentController extends Controller
      * @param  \App\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(comment $comment)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -89,7 +86,7 @@ class CommentController extends Controller
      * @param  \App\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, comment $comment)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -100,7 +97,7 @@ class CommentController extends Controller
      * @param  \App\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(comment $comment)
+    public function destroy(Comment $comment)
     {
         //
     }

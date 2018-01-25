@@ -15,6 +15,7 @@ let mix = require('laravel-mix');
 	 .sass('resources/assets/sass/app.scss', 'public/css')
 	 .copy('resources/assets/css/style.css','public/css')
 	 .copyDirectory('resources/assets/theme/','public/theme/')
+	.copyDirectory('resources/assets/CKEditor/','public/CKEditor/')
 
 	 .version();
  

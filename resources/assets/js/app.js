@@ -1,6 +1,9 @@
+import CKEditor from '@ckeditor/ckeditor5-build-classic'
+
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.ClassicEditor = CKEditor;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

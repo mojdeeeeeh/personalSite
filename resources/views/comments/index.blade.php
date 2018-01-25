@@ -23,7 +23,7 @@
                                                     <span class="label label-info">{{ $card->title }}</span>
                                                 </div>
                                                 <div class="timeline-body">
-                                                    <p>{!! $card->body !!}</p>
+                                                    <p>{!! $card->brief !!}</p>
                                                 </div>
                                               
                                                 <h6>

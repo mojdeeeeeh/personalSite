@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\card;
+use App\Card;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -24,7 +24,7 @@ class CardController extends Controller
 //            return redirect('/home');
 //        }
 
-        $cards = \App\card::orderBy('created_at', 'desc')->paginate(3);
+        $cards = \App\Card::orderBy('created_at', 'desc')->paginate(5);
 
         return view('cards.index', compact('cards'));
     }
@@ -49,8 +49,9 @@ class CardController extends Controller
     {
         $user = \Auth::user();
 
-        card::create ([
+        Card::create ([
             'title'  => $request->title,
+            'brief'   => $request->brief,
             'body'   => $request->body,
             'user_id' => $user->id,
         ]);
@@ -63,36 +64,35 @@ class CardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\card  $card
+     * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show(card $card)
+    public function show(Card $card)
     {
         $card->load('comments');
 
-        return view('comments.create', compact(['comment','card']));
+        return view('comments.create', compact(['card']));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\card  $card
+     * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function edit(card $card)
+    public function edit(Card $card)
     {
         return view('cards.edit', compact('card'));
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\card  $card
+     * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, card $card)
+    public function update(Request $request, Card $card)
     {
         $card->update($request->all());
 
@@ -102,10 +102,10 @@ class CardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\card  $card
+     * @param  \App\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function destroy(card $card)
+    public function destroy(Card $card)
     {
         $card->delete();
     }
