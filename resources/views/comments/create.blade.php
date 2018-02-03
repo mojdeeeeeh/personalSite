@@ -15,7 +15,17 @@
                   <hr>
                   <div class="card-content table-responsive">
                      {!! html_entity_decode(  $card->body ) !!}
+                     
+                     @unless($card->tags->isEmpty())
+                     <ul style="padding-top: 20px ">
+                        <li class="tag label label-info">Tag</li>
+                        @foreach ($card->tags as $tag)
+                        <li class="tag label label-info">{{ $tag->value }}</li>
+                        @endforeach
+                     </ul>
+                     @endunless
                      <hr>
+
 
                      {{-- <div class="panel-heading"></div> --}}
                      <ul>
@@ -68,11 +78,19 @@
                            <button type="submit" class="btn btn-primary">Add new comment</button>
                         </div>
                      </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   @endsection
+                     @if(count($errors))
+
+                     <ul >
+                       @foreach($errors->all() as $error)
+                       <li class="tagsinput">{{ $error }}</li>
+                       @endforeach
+                    </ul>
+                    @endif
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  @endsection
 

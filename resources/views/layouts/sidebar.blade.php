@@ -50,14 +50,14 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    @auth
+                  
                     <li class="{{ Request::path() ==  'dashboard' ? 'active' : ''  }}">
                         <a href="{{ url('dashboard') }}">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                     @endauth
+                    
                     <li>
                         <a data-toggle="collapse" href="#pagesExamples">
                             <i class="material-icons">perm_identity</i>
@@ -67,7 +67,7 @@
                         </a>
                         <div class="collapse" id="pagesExamples">
                             <ul class="nav">
-                                <li class="{{ Request::path() ==  'login' ? 'active' : ''  }}">
+                                <li class="{{ Request::path() ==  'home' ? 'active' : ''  }}">
                                     <a href="{{ url('login') }}">
                                         <span class="sidebar-mini"><i class="material-icons">account_circle</i></span>
                                         <span class="sidebar-normal">Login Page</span>
@@ -94,7 +94,7 @@
                             </ul>
                         </div>
                     </li>
-                    @auth
+                  
                     <li class="{{ Request::path() ==  'comments | cards' ? 'active' : ''  }}">
                         <a data-toggle="collapse" href="#tablesExamples">
                             <i class="material-icons">forum</i>
@@ -125,15 +125,32 @@
                             </ul>
                         </div>
                     </li>
-                    @endauth
-                    @guest
-                    <li class="{{ Request::path() ==  'comments' ? 'active' : ''  }}">
-                        <a href="{{ url('comments') }}">
-                            <i class="material-icons">forum</i>
-                            <p>Posts</p>
+
+                     <li class="{{ Request::path() ==  'tags' ? 'active' : ''  }}">
+                        <a data-toggle="collapse" href="#tagExamples">
+                            <i class="material-icons">bubble_chart</i>
+                            <p>Tags
+                                <b class="caret"></b>
+                            </p>
                         </a>
+                        <div class="collapse" id="tagExamples">
+                            <ul class="nav">
+                                <li class="{{ Request::path() ==  'tags' ? 'active' : ''  }}">
+                                    <a href="{{ url('tags') }}">
+                                        <span class="sidebar-mini"><i class="material-icons">hdr_weak</i></span>
+                                        <span class="sidebar-normal">M/D Tags</span>
+                                    </a>
+                                </li>
+                                <li class="{{ Request::path() ==  'tags/create' ? 'active' : ''  }}">
+                                    <a href="{{ url('tags/create') }}">
+                                        <span class="sidebar-mini"><i class="material-icons">loupe</i></span>
+                                        <span class="sidebar-normal">Create Tags</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    @endguest
+                  
                     <li class="{{ Request::path() ==  'contact' ? 'active' : ''  }}">
                         <a href="{{ url('contact') }}">
                             <i class="material-icons">call</i>
@@ -149,4 +166,4 @@
                 
                 </ul>
             </div>
-        </div>
+</div>

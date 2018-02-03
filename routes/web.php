@@ -24,7 +24,10 @@ Route::post('cards/{card}/comments', 'CommentController@store');
 
 Route::resource('/comments', 'CommentController');
 
-Route::view('/dashboard', 'dashboard');
+Route::resource('/tags', 'TagController');
+
+Route::view('/dashboard', 'dashboard'); //->middleware('auth');
 Route::view('/user', 'user');
-Route::view('/contact', 'contact');
 Route::view('/lock', 'lock');
+
+Route::get('/contact', 'HomeController@contact');

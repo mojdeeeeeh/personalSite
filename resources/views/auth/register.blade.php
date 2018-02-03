@@ -1,6 +1,7 @@
 @extends('layouts.main2')
 @section('content')
 
+
 <div class="wrapper wrapper-full-page">
    <div class="full-page register-page" filter-color="black" data-image="../../assets/img/register.jpeg">
       <div class="container">

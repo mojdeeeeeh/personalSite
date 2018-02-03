@@ -36,6 +36,9 @@
       <meta property="og:image" content="http://s3.amazonaws.com/creativetim_bucket/products/51/opt_mdp_thumbnail.jpg" />
       <meta property="og:description" content="Material Dashboard PRO is a Premium Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design." />
       <meta property="og:site_name" content="Creative Tim" />
+      
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+      
       <!-- Bootstrap core CSS     -->
       <link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet" />
       <!--  Material Dashboard CSS    -->
@@ -47,6 +50,7 @@
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+      <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
    </head>
 
 
@@ -77,13 +81,13 @@
                      <ul class="nav navbar-nav navbar-right">
                         @auth
                         <li>
-                           <a href="{{ url('dashboard') }}" class="dropdown-toggle" data-toggle="dropdown">
+                           <a href="{{ url('dashboard') }}" class="dropdown-toggle" data-toggle="dropdown_icon">
                               <i class="material-icons">dashboard</i>
                               <p class="hidden-lg hidden-md">Dashboard</p>
                            </a>
                         </li>
                         
-                        <li class="dropdown">
+                        <li class="dropdown" id="dropdown_icon">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                               <i class="material-icons">notifications</i>
                               <span class="notification">5</span>
@@ -111,6 +115,7 @@
                            </ul>
                         </li>
                         @endauth
+
                         <li>
                            <div class="collapse navbar-collapse" id="app-navbar-collapse">
                               <!-- Left Side Of Navbar -->
@@ -125,10 +130,13 @@
                                  <li><a href="{{ route('register') }}">Register</a></li>
                                  @else
                                  <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown_menu" role="button"
+                                       aria-expanded="false" aria-haspopup="true">
+                                       {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    <div class="dropdown-menu" id="dropdown_menu">
+                                       
+                                    <ul>
                                        <li>
                                           <a href="{{ route('logout') }}"
                                              onclick="event.preventDefault();
@@ -140,7 +148,19 @@
                                           </form>
                                        </li>
                                     </ul>
-                                 </li>
+                                    </div>
+
+                                       <li>
+                                          <a href="{{ route('logout') }}"
+                                             onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                          Logout
+                                          </a>
+                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                             {{ csrf_field() }}
+                                          </form>
+                                       </li>
+                                       
                                  @endguest
                               </ul>
                            </div>
@@ -203,6 +223,8 @@
       </div>
    </body>
    <!--   Core JS Files   -->
+   <script src="{{ mix('js/app.js') }}"></script>
+
    <script src="{{ asset('theme/js/jquery-3.2.1.min.js') }}" type="text/javascript"></script>
    <script src="{{ asset('theme/js/bootstrap.min.js') }}" type="text/javascript"></script>
    <script src="{{ asset('theme/js/material.min.js') }}" type="text/javascript"></script>
@@ -226,7 +248,7 @@
    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
    <script src="{{ asset('theme/js/bootstrap-datetimepicker.js') }}"></script>
    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-   {{-- <script src="{{ asset('theme/js/jquery-jvectormap.js') }}"></script> --}}
+   <script src="{{ asset('theme/js/jquery-jvectormap.js') }}"></script>
    <!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
    <script src="{{ asset('theme/js/nouislider.min.js') }}"></script>
    <!--  Google Maps Plugin    -->
@@ -247,7 +269,6 @@
    <script src="{{ asset('theme/js/material-dashboard.js?v=1.2.0') }}"></script>
    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
    <script src="{{ asset('theme/js/demo.js') }}"></script>
-   <script src="{{ mix('js/app.js') }}"></script>
    {{-- <script src="[ckeditor-build-path]/ckeditor.js"></script> --}}
 
     <script src="{{ asset('CKEditor/ckeditor/ckeditor.js')}}"></script>

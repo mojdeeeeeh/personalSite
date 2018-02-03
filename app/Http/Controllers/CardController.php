@@ -24,7 +24,8 @@ class CardController extends Controller
 //            return redirect('/home');
 //        }
 
-        $cards = \App\Card::orderBy('created_at', 'desc')->paginate(5);
+        $cards = \App\Card::orderBy('created_at', 'desc')
+        ->paginate(5);
 
         return view('cards.index', compact('cards'));
     }
@@ -36,7 +37,12 @@ class CardController extends Controller
      */
     public function create()
     {
-        return view('cards.create');
+        $tags = \App\Tag::pluck('value')
+        ->toArray();
+
+        $tags = implode(',', $tags);
+
+        return view('cards.create',compact(['card','tags']));
     }
 
     /**
@@ -47,16 +53,38 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required|min:2|max:255',
+            'brief' => 'required|min:6',
+            'body' => 'required|min:6'
+        ]);
+
+        $tagsData = [];
+        $tags = explode (',', $request->input('tags'));
+
+        foreach ($tags as $tag)
+        {
+            $tag = \App\Tag::readOrInsert ($tag);
+
+            $tagsData[] = $tag->id;
+        }
+
+        // return $tagsData;
+
         $user = \Auth::user();
 
-        Card::create ([
+        $card = Card::create ([
             'title'  => $request->title,
             'brief'   => $request->brief,
             'body'   => $request->body,
             'user_id' => $user->id,
         ]);
 
-
+        if (! empty($tagsData))
+        {
+            $card->tags()->sync($tagsData);
+        }
+        
         return redirect()->route('cards.index');
     }
 
@@ -71,7 +99,7 @@ class CardController extends Controller
     {
         $card->load('comments');
 
-        return view('comments.create', compact(['card']));
+        return view('comments.create', compact('card'));
     }
 
     /**
@@ -82,7 +110,11 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-        return view('cards.edit', compact('card'));
+        $tags = $card->tags->pluck('value')
+        ->toArray();
+        $tags = implode(',', $tags);
+
+        return view('cards.edit', compact(['card','tags']));
     }
 
     /**
@@ -94,10 +126,42 @@ class CardController extends Controller
      */
     public function update(Request $request, Card $card)
     {
-        $card->update($request->all());
+     $this->validate($request, [
+        'title' => 'required|min:2|max:255',
+        'brief' => 'required|min:6',
+        'body' => 'required|min:6'
+    ]);
 
-        return redirect()->route('cards.index');
+     $tagsData = [];
+    if (! is_null ($request->input('tags')))
+    {
+        $tags = explode (',', $request->input('tags'));
+
+        foreach ($tags as $tag)
+        {
+            $tag = \App\Tag::readOrInsert ($tag);
+
+            $tagsData[] = $tag->id;
+        }
     }
+
+        // return $tagsData;
+
+    // $card->update($request->all());
+
+    $card->update ([
+        'title' => $request->title,
+        'brief' => $request->brief,
+        'body'  => $request->body,
+    ]);
+
+    if (! empty($tagsData))
+    {
+       $card->tags()->sync($tagsData);
+    }
+
+    return redirect()->route('cards.index');
+}
 
     /**
      * Remove the specified resource from storage.

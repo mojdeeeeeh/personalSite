@@ -14,10 +14,9 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-         $cards = \App\Card::orderBy('created_at', 'desc')
+     {
+          $cards = \App\Card::orderBy('created_at', 'desc')
                 ->paginate(5);
-
         return view('comments.index', compact(['cards']));
     }
 
@@ -40,7 +39,7 @@ class CommentController extends Controller
     public function store(Request $request, Card $card)
     {
         $this->validate($request, [
-            'cmBody' => 'required|min:6',
+            'cmBody' => 'required|min:4',
             'cmName' => 'required',
             'cmEmail' => 'required'
         ]);
@@ -51,8 +50,7 @@ class CommentController extends Controller
             'cmEmail' => $request->cmEmail
         ]);
         
-        $card->comments()
-            ->save($comment);
+        $card->comments()->save($comment);
 
         return back();
     }

@@ -34,14 +34,14 @@
     <meta property="og:description" content="Material Dashboard PRO is a Premium Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design." />
     <meta property="og:site_name" content="Creative Tim" />
     <!-- Bootstrap core CSS     -->
-    <link href="{{ asset('theme/css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('theme/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
     <link href="{{ asset('theme/css/material-dashboard.css?v=1.2.0') }}" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{ asset('theme/css/demo.css') }}" rel="stylesheet" />
     <!--     Fonts and icons     -->
-    <link href="{{ asset('theme/css/main2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/main2.css') }}" rel="stylesheet" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -58,7 +58,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href=" #pablo ">Material Dashboard Pro</a>
+
+                <a class="navbar-brand" href=" #pablo ">
+                    {{ env('APP_NAME') }}    
+                </a>
+
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
