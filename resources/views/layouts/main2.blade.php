@@ -46,6 +46,8 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 <body class="off-canvas-sidebar">
@@ -83,11 +85,7 @@
                             <i class="material-icons">fingerprint</i> Login
                         </a>
                     </li>
-                    <li class=" {{ Request::path() ==  'lock' ? 'active' : ''  }} ">
-                        <a href="{{ url('lock') }}">
-                            <i class="material-icons">lock_open</i> Lock
-                        </a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -102,7 +100,7 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ url('comments') }}">
                                     Home
                                 </a>
                             </li>
@@ -165,8 +163,8 @@
 <!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
 <script src="{{ asset('theme/js/nouislider.min.js') }}"></script>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M"></script>
-<!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M"></script>
+ --}}<!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
 <script src="{{ asset('theme/js/jquery.select-bootstrap.js') }}"></script>
 <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
 <script src="{{ asset('theme/js/jquery.datatables.js') }}"></script>
@@ -183,7 +181,7 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('theme/js/demo.js') }}"></script>
 <script type="text/javascript">
-    $().ready(function() {
+     $().ready(function() {
         demo.checkFullPageBackgroundImage();
 
         setTimeout(function() {
@@ -191,6 +189,8 @@
             $('.card').removeClass('card-hidden');
         }, 700)
     });
-</script>
 
+    
+</script>
+  @yield('script')
 </html>

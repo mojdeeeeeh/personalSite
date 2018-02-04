@@ -1,1 +1,2 @@
-navbar icon username and dashboard
+navbar icon 'main' username for logout
+menu admin 'sidebar' dropup not working

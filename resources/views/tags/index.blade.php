@@ -16,8 +16,8 @@
                <div class="card-content table-responsive">
                   <table class="table table-hover">
                      <thead>
-                        <th class="col-md-10">value</th>
-                        <th class="col-md-2"></th>
+                        <th class="col-md-8">value</th>
+                        <th class="col-md-4"></th>
                      </thead>
                      <tbody>
                         @foreach ($tags as $tag)
@@ -25,6 +25,7 @@
                            <td> {{ $tag->value }} </td>
                            <td>
                               <a href="#" class="btn btn-danger" onclick="deleteRecord({{ $tag->id }})"> Delete</a>
+                              <a href="{{ url("/tags/$tag->id/edit") }}" class="btn btn-primary">Modify</a>
                            </td>
                         </tr>
                         @endforeach

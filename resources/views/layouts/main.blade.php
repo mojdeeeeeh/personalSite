@@ -280,6 +280,12 @@
           demo.initDashboardPageCharts();
           demo.initVectorMap();
       });
+
+      // window.Lockscreen = {
+      //   locked: {{ session()->get('lockscreen', false) }},
+      //   route: '{{ url('/lockscreen') }}',
+      // };
+    
    </script>
    @yield('scripts')
 </html>

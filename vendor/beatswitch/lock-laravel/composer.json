@@ -1,0 +1,47 @@
+{
+    "name": "beatswitch/lock-laravel",
+    "description": "A Laravel Driver for Lock.",
+    "keywords": ["laravel", "acl", "permissions", "security", "roles", "BeatSwitch", "asserts", "conditions", "drivers"],
+    "homepage": "https://github.com/BeatSwitch/lock",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "BeatSwitch",
+            "email": "hello@beatswitch.com",
+            "homepage": "https://www.beatswitch.com"
+        },
+        {
+            "name": "Dries Vints",
+            "email": "dries.vints@gmail.com",
+            "homepage": "http://driesvints.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/BeatSwitch/lock-laravel/issues"
+    },
+    "require": {
+        "php": ">=5.6",
+        "beatswitch/lock": "^0.2.0",
+        "illuminate/auth": ">=5.3.0",
+        "illuminate/database": ">=5.3.0",
+        "illuminate/support": ">=5.3.0"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "^0.3.2",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "BeatSwitch\\Lock\\Integrations\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

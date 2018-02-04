@@ -26,8 +26,20 @@ Route::resource('/comments', 'CommentController');
 
 Route::resource('/tags', 'TagController');
 
-Route::view('/dashboard', 'dashboard'); //->middleware('auth');
-Route::view('/user', 'user');
-Route::view('/lock', 'lock');
+// Route::view('/dashboard', 'dashboard'); //->middleware('auth');
 
 Route::get('/contact', 'HomeController@contact');
+Route::get('/lock', 'HomeController@lock');
+Route::get('/user', 'HomeController@user');
+Route::get('/dashboard', 'HomeController@dashboard');
+
+Route::post('/cards/{{ $card->id }}/comments', function()
+{
+    $data =
+    [
+        'result' => request('cmBody')." - ".request('cmName')." - ".request('cmEmail')
+    ];
+
+   return $data;
+});
+

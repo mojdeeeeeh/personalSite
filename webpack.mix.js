@@ -21,4 +21,6 @@ let mix = require('laravel-mix');
 	 .copyDirectory('resources/assets/CKEditor/','public/CKEditor/')
 
 	 .version();
+
+
  

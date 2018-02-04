@@ -15,8 +15,8 @@ class CommentController extends Controller
      */
     public function index()
      {
-          $cards = \App\Card::orderBy('created_at', 'desc')
-                ->paginate(5);
+      $cards = \App\Card::orderBy('created_at', 'desc')
+                        ->paginate(5);
         return view('comments.index', compact(['cards']));
     }
 

@@ -13,7 +13,7 @@
                </div>
                <div class="card-content">
                   <div>
-                     <a href="{{ route('cards.index') }}" class="btn btn-primary">back</a>
+                     <a href="{{ route('cards.index') }}" class="btn btn-info">back</a>
                   </div>
                   <form method="POST" action='{{ url("cards/$card->id") }}' class="form-horizontal">
                      {{method_field('PATCH')}}

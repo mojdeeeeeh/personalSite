@@ -13,10 +13,10 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -59,6 +59,7 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         ),
         'R' => 
         array (
+            'Rangoo\\Lockscreen\\' => 18,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -108,6 +109,11 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         array (
             'Cron\\' => 5,
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'BeatSwitch\\Lock\\Integrations\\Laravel\\' => 37,
+            'BeatSwitch\\Lock\\' => 16,
         ),
         'A' => 
         array (
@@ -193,6 +199,10 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Rangoo\\Lockscreen\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rangoo/lockscreen/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -282,6 +292,14 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beatswitch/lock-laravel/src',
+        ),
+        'BeatSwitch\\Lock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beatswitch/lock/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -328,6 +346,9 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
     );
 
     public static $classMap = array (
+        'App\\Card' => __DIR__ . '/../..' . '/app/Card.php',
+        'App\\CardTag' => __DIR__ . '/../..' . '/app/CardTag.php',
+        'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -335,10 +356,11 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\CardController' => __DIR__ . '/../..' . '/app/Http/Controllers/CardController.php',
+        'App\\Http\\Controllers\\CardTagController' => __DIR__ . '/../..' . '/app/Http/Controllers/CardTagController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\TagsController' => __DIR__ . '/../..' . '/app/Http/Controllers/TagsController.php',
+        'App\\Http\\Controllers\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/TagController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -350,11 +372,41 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
-        'App\\card' => __DIR__ . '/../..' . '/app/card.php',
-        'App\\cards_tags' => __DIR__ . '/../..' . '/app/cards_tags.php',
-        'App\\comment' => __DIR__ . '/../..' . '/app/comment.php',
-        'App\\tags' => __DIR__ . '/../..' . '/app/tags.php',
+        'BeatSwitch\\Lock\\ActionAlias' => __DIR__ . '/..' . '/beatswitch/lock/src/ActionAlias.php',
+        'BeatSwitch\\Lock\\Callers\\Caller' => __DIR__ . '/..' . '/beatswitch/lock/src/Callers/Caller.php',
+        'BeatSwitch\\Lock\\Callers\\CallerLock' => __DIR__ . '/..' . '/beatswitch/lock/src/Callers/CallerLock.php',
+        'BeatSwitch\\Lock\\Callers\\SimpleCaller' => __DIR__ . '/..' . '/beatswitch/lock/src/Callers/SimpleCaller.php',
+        'BeatSwitch\\Lock\\Drivers\\ArrayDriver' => __DIR__ . '/..' . '/beatswitch/lock/src/Drivers/ArrayDriver.php',
+        'BeatSwitch\\Lock\\Drivers\\Driver' => __DIR__ . '/..' . '/beatswitch/lock/src/Drivers/Driver.php',
+        'BeatSwitch\\Lock\\Drivers\\ReadOnlyDriver' => __DIR__ . '/..' . '/beatswitch/lock/src/Drivers/ReadOnlyDriver.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\DatabaseDriver' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/DatabaseDriver.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\Facades\\Lock' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/Facades/Lock.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\Facades\\LockManager' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/Facades/LockManager.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\LockServiceProvider' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/LockServiceProvider.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\Middleware\\InitLockAwareTrait' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/Middleware/InitLockAwareTrait.php',
+        'BeatSwitch\\Lock\\Integrations\\Laravel\\UserLock' => __DIR__ . '/..' . '/beatswitch/lock-laravel/src/UserLock.php',
+        'BeatSwitch\\Lock\\InvalidLockInstance' => __DIR__ . '/..' . '/beatswitch/lock/src/InvalidLockInstance.php',
+        'BeatSwitch\\Lock\\Lock' => __DIR__ . '/..' . '/beatswitch/lock/src/Lock.php',
+        'BeatSwitch\\Lock\\LockAware' => __DIR__ . '/..' . '/beatswitch/lock/src/LockAware.php',
+        'BeatSwitch\\Lock\\LockFactory' => __DIR__ . '/..' . '/beatswitch/lock/src/LockFactory.php',
+        'BeatSwitch\\Lock\\LockInstanceNotSet' => __DIR__ . '/..' . '/beatswitch/lock/src/LockInstanceNotSet.php',
+        'BeatSwitch\\Lock\\Manager' => __DIR__ . '/..' . '/beatswitch/lock/src/Manager.php',
+        'BeatSwitch\\Lock\\Permissions\\AbstractPermission' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/AbstractPermission.php',
+        'BeatSwitch\\Lock\\Permissions\\Condition' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/Condition.php',
+        'BeatSwitch\\Lock\\Permissions\\InvalidPermissionType' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/InvalidPermissionType.php',
+        'BeatSwitch\\Lock\\Permissions\\Permission' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/Permission.php',
+        'BeatSwitch\\Lock\\Permissions\\PermissionFactory' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/PermissionFactory.php',
+        'BeatSwitch\\Lock\\Permissions\\Privilege' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/Privilege.php',
+        'BeatSwitch\\Lock\\Permissions\\Restriction' => __DIR__ . '/..' . '/beatswitch/lock/src/Permissions/Restriction.php',
+        'BeatSwitch\\Lock\\Resources\\Resource' => __DIR__ . '/..' . '/beatswitch/lock/src/Resources/Resource.php',
+        'BeatSwitch\\Lock\\Resources\\SimpleResource' => __DIR__ . '/..' . '/beatswitch/lock/src/Resources/SimpleResource.php',
+        'BeatSwitch\\Lock\\Roles\\Role' => __DIR__ . '/..' . '/beatswitch/lock/src/Roles/Role.php',
+        'BeatSwitch\\Lock\\Roles\\RoleLock' => __DIR__ . '/..' . '/beatswitch/lock/src/Roles/RoleLock.php',
+        'BeatSwitch\\Lock\\Roles\\SimpleRole' => __DIR__ . '/..' . '/beatswitch/lock/src/Roles/SimpleRole.php',
+        'BeatSwitch\\Lock\\Tests\\PersistentDriverTestCase' => __DIR__ . '/..' . '/beatswitch/lock/src/Tests/PersistentDriverTestCase.php',
+        'BeatSwitch\\Lock\\Tests\\StaticDriverTestCase' => __DIR__ . '/..' . '/beatswitch/lock/src/Tests/StaticDriverTestCase.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -3014,6 +3066,12 @@ class ComposerStaticInit861f756069a206b41a4016957119e079
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'Rangoo\\Lockscreen\\LockscreenServiceProvider' => __DIR__ . '/..' . '/rangoo/lockscreen/src/LockscreenServiceProvider.php',
+        'Rangoo\\Lockscreen\\Middleware\\RedirectIfNotLocked' => __DIR__ . '/..' . '/rangoo/lockscreen/src/Middleware/RedirectIfNotLocked.php',
+        'Rangoo\\Lockscreen\\Middleware\\RedirectIfNotUnlocked' => __DIR__ . '/..' . '/rangoo/lockscreen/src/Middleware/RedirectIfNotUnlocked.php',
+        'Rangoo\\Lockscreen\\Requests\\LockscreenRequest' => __DIR__ . '/..' . '/rangoo/lockscreen/src/Requests/LockscreenRequest.php',
+        'Rangoo\\Lockscreen\\Rules\\PasswordReconfirm' => __DIR__ . '/..' . '/rangoo/lockscreen/src/Rules/PasswordReconfirm.php',
+        'Rangoo\\Lockscreen\\Traits\\LockscreenMethods' => __DIR__ . '/..' . '/rangoo/lockscreen/src/Traits/LockscreenMethods.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

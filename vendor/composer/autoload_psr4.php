@@ -25,6 +25,7 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Rangoo\\Lockscreen\\' => array($vendorDir . '/rangoo/lockscreen/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
@@ -47,5 +48,7 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/mtdowling/cron-expression/src/Cron'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'BeatSwitch\\Lock\\Integrations\\Laravel\\' => array($vendorDir . '/beatswitch/lock-laravel/src'),
+    'BeatSwitch\\Lock\\' => array($vendorDir . '/beatswitch/lock/src'),
     'App\\' => array($baseDir . '/app'),
 );

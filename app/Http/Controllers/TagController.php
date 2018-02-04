@@ -66,7 +66,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+        return view('tags.edit', compact('tag'));
     }
 
     /**
@@ -78,7 +78,14 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+         $this->validate($request, [
+            'value' => 'required|min:2|max:255'
+        ]);
+         $tag->update ([
+            'value'  => $request->value
+        ]);
+
+        return redirect()->route('tags.index');
     }
 
     /**

@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-                    'only' => ['index']
+                    'only' => ['index','user','contact','lockscreen','user']
             ]);
     }
 
@@ -37,4 +37,20 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+
+    public function lock()
+    {
+        return view('lock');
+    }
+
+     public function user()
+    {
+        return view('user');
+    }
+
+     public function dashboard()
+    {
+        return view('dashboard');
+    }
+
 }

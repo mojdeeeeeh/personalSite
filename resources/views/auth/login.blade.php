@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="wrapper wrapper-full-page">
-<div class="full-page login-page" filter-color="black" data-image="../../assets/img/login.jpeg">
+<div class="full-page login-page" filter-color="black" data-image="{{ asset('theme/img/login.jpeg') }}">
 <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
 <div class="content">
    <div class="container">
