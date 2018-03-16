@@ -42,8 +42,8 @@
     <link href="{{ asset('theme/css/demo.css') }}" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="{{ asset('css/main2.css') }}" rel="stylesheet" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    {{-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" /> --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -74,7 +74,19 @@
                             <i class="material-icons">dashboard</i> Dashboard
                         </a>
                     </li>
+                    <li>
+                                          <a href="{{ route('logout') }}"
+                                             onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                          Logout
+                                          </a>
+                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                             {{ csrf_field() }}
+                                          </form>
+                                       </li>
                     @endauth
+                    @guest
+                    
                     <li class="{{ Request::path() ==  'register' ? 'active' : ''  }}">
                         <a href="{{ url('register') }}">
                             <i class="material-icons">person_add</i> Register
@@ -85,7 +97,8 @@
                             <i class="material-icons">fingerprint</i> Login
                         </a>
                     </li>
-                    
+                    @endguest
+
                 </ul>
             </div>
         </div>

@@ -22,6 +22,7 @@
         "@ckeditor/ckeditor5-build-classic": "^1.0.0-alpha.2",
         "@ckeditor/ckeditor5-build-inline": "^1.0.0-alpha.2",
         "@ckeditor/ckeditor5-essentials": "^1.0.0-alpha.2",
-        "@ckeditor/ckeditor5-image": "^1.0.0-alpha.2"
+        "@ckeditor/ckeditor5-image": "^1.0.0-alpha.2",
+        "sensor-afk": "^1.1.1"
     }
 }

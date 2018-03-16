@@ -1,6 +1,6 @@
  <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog "  style="z-index: 999!@important;">
 
         <!-- Modal content-->
         <div class="modal-content">
@@ -11,32 +11,34 @@
 
             <div class="modal-body">
 
-                <form id="app" action='{{ url("cards/$card->id/comments") }}'  method="post" class="row">
+                <form id="app" action='{{ url("cards/$card->id/comments") }}' method="post" class="row">
                     {{ csrf_field()  }}
 
                     <div class="form-group">
                         <label for="cmBody">comment</label>
                         <div>
-                            <input type="text" id="cmBody" name="cmBody" class="form-control" v-model="cmBody">
+                            <textareaid="cmBody" name="cmBody" class="form-control">
+                                
+                            </textarea> 
                         </div>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="cmName">Name</label>
                         <div>
-                            <input type="text" id="cmName" name="cmtName" class="form-control" v-model="cmName">
+                            <input type="text" id="cmName" name="cmName" class="form-control">
                         </div>
                     </div>
 
                    <div class="form-group col-md-6">
                         <label for="cmEmail">Email</label>
                         <div>
-                            <input type="text" id="cmEmail" name="cmEmail" class="form-control" v-model="cmEmail">
+                            <input type="text" id="cmEmail" name="cmEmail" class="form-control">
                         </div>
                     </div>
 
                     <div class="col-md-offset-4">
-                        <input type="submit" value="Send" @click.prevent="sendData" class="btn btn-primary ">
+                        <input type="submit" value="Send" class="btn btn-primary ">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </form>

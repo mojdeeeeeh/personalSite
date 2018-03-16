@@ -64,7 +64,7 @@
                class="form-control tagsinput" data-role="tagsinput" data-color="rose" />
             </div>
             </div>
-            <div class="form-group" style="padding: 10px">
+            <div class="form-group col-md-offset-5" style="padding: 10px">
             <button type="submit" class="btn btn-primary">Add note</button>
             </div>
             </form>

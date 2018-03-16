@@ -3,7 +3,7 @@
 @section('content')
             <!--   you can change the color of the filter page using: data-color="blue | green | orange | red | purple" -->
             <div class="content">
-                <form class="form-horizontal" method="POST" action="{{ url('lock') }}">
+                <form class="form-horizontal" method="POST" action="{{ url('lockscreen') }}">
                {{ csrf_field() }}
                     <div class="card card-profile card-hidden">
                         <div class="card-avatar">
@@ -31,3 +31,12 @@
             </div>
             @endsection
 
+@section('script')
+<script>
+      window.Lockscreen = {
+        locked: {{ session()->get('lockscreen', false) }},
+        route: '{{ url('/lockscreen') }}',
+      };
+      
+    </script>
+@endsection

@@ -9,7 +9,8 @@ class CardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show');
+        $this->middleware('auth')
+            ->except(['show', 'addComment']);
     }
 
     /**
@@ -65,7 +66,6 @@ class CardController extends Controller
         foreach ($tags as $tag)
         {
             $tag = \App\Tag::readOrInsert ($tag);
-
             $tagsData[] = $tag->id;
         }
 
@@ -172,5 +172,16 @@ class CardController extends Controller
     public function destroy(Card $card)
     {
         $card->delete();
+    }
+
+    public function addComment(Request $request, Card $card)
+    {
+        $card->comments()->create([
+            'cmBody' => $request->cmBody,
+            'cmName' => $request->cmName,
+            'cmEmail' => $request->cmEmail
+        ]);
+
+        return back()->withInput();
     }
 }

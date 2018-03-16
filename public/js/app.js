@@ -25598,12 +25598,15 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckeditor_ckeditor5_build_classic__ = __webpack_require__("./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckeditor_ckeditor5_build_classic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ckeditor_ckeditor5_build_classic__);
+throw new Error("Cannot find module \"sensor-afk\"");
+
 
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 window.ClassicEditor = __WEBPACK_IMPORTED_MODULE_0__ckeditor_ckeditor5_build_classic___default.a;
+window.SensorAFK = __WEBPACK_IMPORTED_MODULE_1_sensor_afk___default.a;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

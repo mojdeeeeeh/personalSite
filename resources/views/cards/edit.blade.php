@@ -56,9 +56,9 @@
                             <legend>Tags</legend>
 
                             <input type="text" value="{{ old('tags', $tags) }}" name="tags" 
-                                class="form-control tagsinput" data-role="tagsinput" data-color="rose" />
+                                class="form-control tagsinput" data-role="tagsinput" data-color="info" />
+                          </div>
                         </div>
-                    </div>
 
                      <div class="form-group" style="padding: 10px">
                         <button type="submit" class="btn btn-primary">Edit note</button>

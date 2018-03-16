@@ -38,10 +38,10 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    public function lock()
-    {
-        return view('lock');
-    }
+    // public function lock()
+    // {
+    //     return view('lock');
+    // }
 
      public function user()
     {

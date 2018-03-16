@@ -79,8 +79,8 @@
                                         <span class="sidebar-normal">Register Page</span>
                                     </a>
                                 </li>
-                                <li class="{{ Request::path() ==  'lock' ? 'active' : ''  }}">
-                                    <a href="{{ url('lock') }}">
+                                <li class="{{ Request::path() ==  'lockscreen' ? 'active' : ''  }}">
+                                    <a href="{{ url('lockscreen') }}">
                                         <span class="sidebar-mini"><i class="material-icons">block</i></span>
                                         <span class="sidebar-normal">Lock Screen Page</span>
                                     </a>

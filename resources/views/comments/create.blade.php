@@ -23,8 +23,9 @@
                      {{-- 
                      <div class="panel-heading"></div>
                      --}}
+
                      <ul>
-                        @foreach($card -> comments as $comment)
+                        @foreach($card->comments as $comment)
                         <li class="no-style">
                            <h5>
                               {{ $comment->cmName }}  
@@ -39,7 +40,6 @@
                      </ul>
                </div>
 
-               @include('comments.createModal')
 
                <!-- Trigger the modal with a button -->
                <div class="col-md-offset-5">
@@ -51,36 +51,38 @@
       </div>
    </div>
 </div>
+
+@include('comments.createModal')
+
 @endsection
 
 @section('script')
-<script src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript">
-   new Vue({
-        el: '#app',
-        data:
-            {
-                cmBody: '',
-                cmName: '',
-                cmEmail: ''
-            },
-        methods:
-            {
-                sendData() {
-                    let data =
-                        {
-                            cmBody: this.cmBody,
-                            cmName: this.cmName,
-                            cmEmail: this.cmEmail
-                        };
+  <script src="{{ asset('js/app.js') }}"></script>
+  
+  <script type="text/javascript">
+  //    Vue.component('modal', {
+  //   template: '#modal-template',
+  //   props: ['show'],
+  //   methods: {
+  //     savePost: function () {
+  //       // Some save logic goes here...
+        
+  //       this.$emit('close');
+  //     }
+  //   }
+  // });
 
-                    axios.post('{{ url("cards/$card->id/comments") }}', data)
+  // new Vue({
+  //   el: '#app',
+  //   data: {
+  //     showModal: false
+  //   },
 
-                        .then((x) => {
-                            alert(x.data.result);
-                        });
-                }
-            }
-    });
+  //   methods:{
+  //     sendData(){
+  //       alert('ok');
+  //     }
+  //   }
+  // });
 </script>
 @endsection

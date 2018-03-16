@@ -25,7 +25,8 @@ class CreateCommentsTable extends Migration
             $table->integer('card_id')->unsigned ();
 
             $table->foreign('card_id')
-                ->references ('id')->on ('cards')
+                ->references ('id')
+                ->on ('cards')
                 ->onUpdate ('cascade')
                 ->onDelete ('cascade');
         });

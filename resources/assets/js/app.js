@@ -1,9 +1,11 @@
 import CKEditor from '@ckeditor/ckeditor5-build-classic'
+import SensorAFK from 'sensor-afk'
 
 require('./bootstrap');
 
 window.Vue = require('vue');
 window.ClassicEditor = CKEditor;
+window.SensorAFK = SensorAFK;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
